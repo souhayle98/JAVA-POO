@@ -9,8 +9,9 @@ import java.util.List;
 
 public class DeserialisationBibliotheque {
     public static void main(String[] args) {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("bibliotheque.ser"))) {
-            List<Livre> livres = (List<Livre>) ois.readObject();
+        try {
+            ObjectInputStream ois = new ObjectInputStream(new FileInputStream("bibliotheque.txt"));
+            List<Livre> livres = (List<Livre>)ois.readObject();
             for (Livre livre : livres) {
                 System.out.println(livre); // Affiche chaque livre
             }

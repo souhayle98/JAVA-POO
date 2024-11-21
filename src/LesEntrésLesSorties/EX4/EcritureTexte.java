@@ -8,8 +8,11 @@ import java.io.IOException;
 
 public class EcritureTexte {
     public static void main(String[] args) {
-        try (BufferedReader br = new BufferedReader(new FileReader("livres.txt"));
-             BufferedWriter bw = new BufferedWriter(new FileWriter("sortie.txt"))) {
+        try  {
+           FileReader fr = new FileReader("livre.txt");
+            BufferedReader br = new BufferedReader(fr);
+            FileWriter fw = new FileWriter("sortie.txt");
+            BufferedWriter bw = new BufferedWriter(fw);
             String ligne;
             while ((ligne = br.readLine()) != null) {
                 bw.write(ligne);
